@@ -1,0 +1,23 @@
+{
+  "id": "3256229",
+  "name": "轮播图",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "7939946",
+      "name": "方向圆-向右",
+      "font_class": "arrow-",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "8145776",
+      "name": "方向圆-向右",
+      "font_class": "arrow-left-solid",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/03_layout/reset.css">
+    <style>
+        body{
+            background-color: aqua;
+
+
+
+        }
+        .img-list{
+            /* 设置ul宽度 */
+            width: 190px;
+            /* 设置ul高度 */
+            height: 470px;
+            /* 裁剪溢出的部分 */
+            overflow: hidden    ;
+            /* 使ul在页面居中(实际上不需要这么写) */    
+            margin-top: 172.39px;
+            margin-left: 400px;
+            background-color: #f4f4f4;
+            
+        }
+
+        .img-list li:not(:last-child){
+            margin-bottom: 9px ;
+
+
+        } 
+
+
+        .img-list img{
+            width: 100%;
+        }
+        /* .box1{
+            width: 190px;
+            height: 148x;
+            margin-bottom: 14px;
+            color: #CED3DF;
+        }
+        .box2{
+            width: 190px;
+            height: 148px;
+            margin-bottom: 14px;
+            color: #CED3DF;
+        }
+        .box3{
+            width: 190;
+            height:148px;
+        margin-top: 165px;
+            color: #CED3DF;
+        } */
+       
+    </style>
+</head>
+<body>
+   <!--方式一 
+    <div>
+    <img src="" alt="">
+    <img src="" alt="">
+    <img src="" alt="">
+    </div> -->
+     <ul  class="img-list">
+         <li class="box1">
+             <a href="https://prodev.jd.com/mall/active/34qAaUk6AW39g9BX6me3z2F6pYUG/index.html">
+                 <img src="../img/图片1.webp" alt="">
+             </a>
+         </li>
+         <li class="box2">
+            <a href="https://pro.jd.com/mall/active/4WBnygw4grrgD6o6DNdsWvrauqAu/index.html">
+                <img src="../img/a6aa23f1163ff561.jpg.webp" alt="">
+            </a>
+        </li>
+        <li class="box3">
+            <a href="https://pro.jd.com/mall/active/38Mc7TiQgniptV6PtE3rPhbDMKuy/index.html?babelChannel=ttt50">
+                <img src="../img/图片3.webp" alt="">
+            </a>
+        </li>
+     </ul>
+</body>
+</html>

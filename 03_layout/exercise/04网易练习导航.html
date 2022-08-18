@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网易新闻</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <style>
+        body {
+            background-color: antiquewhite;
+
+        }
+
+        .title {
+
+            height: 37px;
+            display: inline-block;
+
+            /* 为了设置边框和文字一样宽 */
+            border-top: 1px solid red;
+            margin-top: -1px;
+            /* 让把最上面的部分下移一部分 */
+            padding: 5px;
+        }
+
+        /* 设置航空样式 最上面 */
+        .title a {
+            color: #404040;
+            /* 加粗字体 */
+            font-weight: bold;
+
+
+
+        }
+        /* 设置新闻列表的上边距 */
+        .news-list{
+            margin-top: 20px;
+
+
+        }
+        
+        /* 设置图片容器的高度 */
+        .news-img{
+             height: 150px;
+         }
+        /* 设置容器的样式 */
+        .box1 {
+            width: 300px;
+            height: 324px;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+            margin: 50px auto;
+
+        }
+
+        /* 设置图片中的文字样式 */
+        .news-img a h3 {
+
+           margin: -25px 25px 0;
+           /* 给字体加粗 */
+            font-weight: bold;
+            color: #fff;
+
+
+
+
+
+        }
+
+
+
+        /* 设置列表样式 */
+        .list {
+            width: 300px;
+            height: 30px;
+            color: #ddd;
+            
+
+        }
+        /* 通过::before为每一个li（list）添加特殊字符 ■*/
+        .news-list .list::before{
+          content: '■';
+          color: rgb(151, 151, 151);
+          font-size: 12px;
+          padding-left: 0px;
+
+        }
+
+        .list a {
+            padding-left: 8px;
+            line-height: 30px;
+        
+
+
+        }
+
+        .list a:hover {
+            color: red;
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 创建一个容器 -->
+    <div class="box1">
+        <h2 class="title">
+            <a href="https://war.163.com/">军事</a><span>.</span>
+            <a href="https://news.163.com/air/">航空</a>
+        </h2>
+        <!-- 添加图片 -->
+        <div class="news-img">
+            <a href="https://war.163.com/photoview/4T8E0001/2313508.html#p=H25T2N3G4T8E0001NOS">
+                <img src="/03_layout/img/328981bcj00r8k3ja001oc000s600e3c.webp" alt="">
+                <h3>俄乌外长会谈在土耳其举行</h3>
+            </a>
+        </div>
+
+
+        <!-- 新闻列表 -->
+        <div class="xinwenliebiao">
+            <ul class="news-list">
+                <li class="list">
+                    <a href="https://war.163.com/photoview/4T8E0001/2313511.html#p=H25TQI8A4T8E0001NOS">东风猛士装甲车野外训练
+                        外形剽悍</a>
+                </li>
+                <li class="list">
+                    <a href="https://war.163.com/photoview/4T8E0001/2313509.html#p=H25T81TL4T8E0001NOS">美国公司测试新款月球车
+                        外形像老式马车</a>
+                </li>
+                <li class="list">
+                    <a href="https://www.163.com/dy/article/H2612P3U0514EGPO.html">上海浦东机场海关查获多批违禁品</a>
+                </li>
+                <li class="list">
+                    <a href="https://www.163.com/dy/article/H25SLRU20514R9KD.html">近期中韩航班大面积熔断 驻韩使馆发布重要</a>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>

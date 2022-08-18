@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background-color: #bfa;
+            transition: 2s;
+
+            margin: 0 auto;
+            /* transform-origin: ;变形缩放原点 默认值是从center缩放 */
+            transform-origin: 0 0;
+        }
+        .box1:hover{
+                /* scale
+                对元素进行缩放的函数
+                scaleY()垂直方向缩放
+                scaleX() 水平方向缩放
+                scale 双方向缩放
+                
+                */
+            transform: scaleY(3) scaleX(3) ;
+
+
+
+        }
+        .img-wrapper{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            transition: 2s;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .img-wrapper img{
+            transition: 2s;
+
+
+        }
+        .img-wrapper img:hover{
+                transform: scale(1.2);
+
+
+        }
+
+    </style>
+</head>
+<body>
+        <div class="box1"></div>
+        <div class="img-wrapper">
+                <img src="/03_layout/img/4.jpg " width="100%" >
+
+
+        </div>
+</body>
+</html>

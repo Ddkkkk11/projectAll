@@ -1,0 +1,16 @@
+{
+  "id": "3255194",
+  "name": "坐标",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "577390",
+      "name": "坐标",
+      "font_class": "zuobiao",
+      "unicode": "e769",
+      "unicode_decimal": 59241
+    }
+  ]
+}

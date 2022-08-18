@@ -1,0 +1,32 @@
+/*  css中的注释 ，内容会解析到css中
+         */
+.box1 {
+  background-color: #bfa;
+}
+.box1 .box2 {
+  background-color: green;
+}
+.box1 .box2 .box4 {
+  background-color: aqua;
+}
+.box1 .box3 {
+  background-color: orange;
+}
+.box5 {
+  width: 100px;
+  color: #ff0000;
+}
+.box6 {
+  width: 100px;
+  background-image: url("box6/1.png");
+}
+.box7 {
+  width: 300px;
+}
+div {
+  height: 290px;
+}
+div {
+  height: 300px;
+  width: 300px;
+}

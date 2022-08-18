@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    body {
+      font-size: 60px;
+    }
+    
+    
+
+    .box1 {
+      width: 200px;
+      height: 200px;
+      background-color: #bfa;
+    }
+
+    .box2 {
+      width: 200px;
+      height: 200px;
+      background-color: #baf;
+
+
+      /* position: relative;
+             left: 200px;
+             top: -200px; */
+      /*绝对定位 
+            
+            当元素的position属性值设置为absolute，则开启了元素的绝对定位
+                -绝对定位的特点：
+                    1.开启绝对定位后如果不设置元素的偏移量  元素的位置不会发生变化
+                    2.开启绝对定位后元素会从文档流中脱离
+                    3.绝对定位会改变元素的性质 行内变成块，块的内容被元素撑开 
+                    4.绝对定位会使元素提高层级
+                    5.绝对定位元素是相当于包含块进行定位的
+                            包含块(containing block)  
+                                  -正常情况下
+                                      包含块元素就是离当前最近的祖先块元素
+                                      例如：<div class="box1"><div> </div> </div> 包含块元素就是box1
+                                            <div class="box1">
+                                              <div class="box2"> 
+                                                <div> </div>
+                                                </div> 
+                                              </div>     包含块元素就是box2 
+                                              <div class="box1"> <span> <em>  </em> </span> </div>  span的包含块元素是div  em的包含块元素是 div  因为span不是快元素
+                                  --绝对定位的块元素：
+                                              包含块就是距离它最近的开启了定位的祖先元素
+                                                    如果所有的祖先元素都没有开启定位 则根元素就是它的包含块
+                                                      -html(跟元素，初始块元素) 
+                */
+      /* 开启了绝对定位 */
+      position: absolute;
+    top: 0;
+    left: 0;
+    }
+
+    .box3 {
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+
+
+
+
+
+    }
+
+    .box4 {
+      width: 400px;
+      height: 400px;
+      background-color: tomato;
+      position: relative;
+    }
+
+    .box5 {
+
+
+      width: 300px;
+      height: 300px;
+      background-color: antiquewhite;
+      position: relative;
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box1">1</div>
+  <div class="box4">
+    4
+    <div class="box5">
+      5
+      <div class="box2">2</div>
+    </div>
+  </div>
+
+  <div class="box3">3</div>
+
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{
+  "id": "3255447",
+  "name": "jd",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5387553",
+      "name": "搜索",
+      "font_class": "sousuo1",
+      "unicode": "eafe",
+      "unicode_decimal": 60158
+    },
+    {
+      "icon_id": "4152719",
+      "name": "京东_1",
+      "font_class": "jingdong_",
+      "unicode": "e631",
+      "unicode_decimal": 58929
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+
+
+}
+
+.w {
+
+    width: (693/40rem);
+    margin: 0 auto;
+
+
+}
+
+@total-width: 750;
+// 设置center
+
+// 设置根元素
+html {
+    // 设置rem的比值
+    font-size: (100vw/@total-width)*40;
+    background-color: #EEF0F2;
+
+}
+
+// 去除超链接的下划线
+a {
+    text-decoration: none;
+}
+
+// 设置头部header
+
+div.top-bar:extend(.w) {
+    display: flex;
+    // 设置高度
+    height: (175/40rem);
+    line-height: (175/40rem);
+    // 设置元素的空白空间
+    justify-content: space-between;
+    align-items: center;
+
+    a {
+        color: #242632;
+        font-size: (50/40rem);
+
+        i {
+            color: #999;
+            font-size: 1rem;
+        }
+    }
+
+}
+
+// 设置图片
+div.banner-img:extend(.w) {
+    img {
+        .w;
+        height: (318/40rem);
+
+
+    }
+
+
+}
+
+// 设置下面四个标签
+div.menu:extend(.w) {
+
+    height: (330/40rem);
+    // 开启弹性盒
+    display: flex;
+    // 设置让元素换行
+    flex-flow: row wrap;
+    // 设置对齐方式
+    justify-content: space-between;
+    align-content: space-evenly;
+    // align-content: space-around;
+
+    // text-align: center;
+    // vertical-align: middle;
+    a {
+        height: (104/40rem);
+        width: (327/40rem);
+        display: block;
+        margin-left: (10/40rem);
+        line-height: (104/40rem);
+        // text-align: center;
+        color: #fff;
+        border-radius: (20/40rem);
+
+        i {
+            margin: 0 (32/40rem) 0 (38/40rem);
+
+        }
+    }
+
+    .course {
+        background-color: #FF7B4D;
+    }
+
+    .star {
+        background-color: #CE74FF;
+
+    }
+
+    .sub {
+
+        background-color: #FF5171;
+    }
+
+    .download {
+        background-color: #0E9FFF;
+
+    }
+}
+
+// // 设置最新新闻列表
+// .news-list:extend(.w) {
+//     display: flex;
+//     justify-content: space-between;
+//     align-content: space-evenly;
+
+//     h4 {
+//         margin-left: (10/40rem);
+//     }
+
+// }
+
+// .news-img:extend(.w) {
+//     display: flex;
+//     justify-content: space-between;
+//     height: (264/40rem);
+//     align-content: flex-end;
+// }
+
+// // 设置news图片样式
+// .news-img img {
+//     width: (237/40rem);
+//     height: (239/40rem);
+
+
+// }
+.item-list{
+    width: (720/40rem);
+    display: flex;
+
+}
+.course-list:extend(.w) {
+    overflow: auto;
+    height: (394/40rem);
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    margin-bottom: (46/40rem);
+    .title {
+        display: flex;
+        // 主轴空间
+        justify-content: space-between;
+        // 辅轴对齐方式
+        align-items: center;
+
+        h2 {
+            font-size: (33/40rem);
+            color: #24253d;
+            border-left: (5/40rem) solid #0E9FFF;
+            padding-left: (10/40rem);
+        }
+
+        a {
+
+            font-size: (28/40rem);
+            color: #707274;
+
+
+        }
+    }
+}
+
+//设置列表项目
+.item {
+    // overflow: auto;
+    flex: none;
+    margin-right: (24/40rem);
+    box-sizing: border-box;
+    padding: 0 (10/40rem);
+    width: (320/40rem);
+    height: (324/40rem);
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    border-radius: (10/40rem);
+    display: flex;
+    flex-flow: column;
+    justify-content: space-evenly;
+    // align-content: space-between;
+    img{
+            width: 100%;
+
+
+    }
+    .course-title{
+
+        font-size: (32/40rem);
+        color: #24253d;
+    }
+    
+   .nickname{
+       
+      
+    //    display: block;
+        font-size: (24/40rem); 
+        color: #969393;
+        margin-left: (10/40rem);
+
+
+   }
+   .user-info{
+    display: flex;
+
+   }
+    
+}

@@ -1,0 +1,206 @@
+// base样式
+a {
+    color: #fff;
+
+    &:active {
+        color: rgb(197, 191, 191);
+
+    }
+}
+div.top-bar-wrapper{
+    background-image: linear-gradient(to right, #43c6ac, #f8ffae);
+
+}
+
+
+.top-bar {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 48px;
+    // background-color: black;
+    background-image: linear-gradient(to right, #43c6ac, #f8ffae);
+    padding: 0 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// 设置点击菜单的样式
+div.left-menu {
+
+    // 当移入时显示 菜单
+    &:active {
+        ul.nav {
+            display: block;
+        }
+    }
+
+    ul.menu-icon {
+        width: 18px;
+        height: 48px;
+        // background-color: black;
+        // position: relative;
+        // 导航线
+        li {
+            width: 18px;
+            height: 1px;
+            background-color: #fff;
+            position: absolute;
+            transition: 0.2s;
+        }
+
+        li:nth-child(1) {
+            top: 18px;
+            // transform:  translateY(6px)  rotateZ(45deg);
+            // animation: run 0.5s;
+            // transform: translateY(6px) rotateZ(45deg) ;
+        }
+
+        li:nth-child(2) {
+            top: 24px;
+            // opacity: 0;
+            // animation: display 0.5s;
+        }
+
+        li:nth-child(3) {
+            top: 30px;
+            // transform: translateY(-6px) rotateZ(-45deg);
+
+            // animation: toto 0.5s;
+            // transform: translateY(-6px) rotateZ(-45deg);
+        }
+    }
+
+    // 鼠标移入以后的效果
+    ul.menu-icon:active {
+
+        li:nth-child(1) {
+            top: 18px;
+            transform: translateY(6px) rotateZ(45deg);
+            // animation: run 0.5s;
+            // transform: translateY(6px) rotateZ(45deg) ;
+        }
+
+        li:nth-child(2) {
+            top: 24px;
+            opacity: 0;
+            // animation: display 0.5s;
+        }
+
+        li:nth-child(3) {
+            top: 30px;
+            transform: translateY(-6px) rotateZ(-45deg);
+
+            // animation: toto 0.5s;
+            // transform: translateY(-6px) rotateZ(-45deg);
+        }
+    }
+
+
+}
+
+// 设置左侧的菜单
+ul.nav {
+    display: none;
+    // display: block;
+    position: absolute;
+    top: 48px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #43c6ac;
+    padding-top: 50px;
+
+    li {
+        width: 80%;
+        margin: 0 auto;
+        border-bottom: 1px solid #4e4e4e;
+
+        a {
+            display: block;
+            line-height: 44px;
+            font-size: 14px;
+        }
+
+        &:last-child {
+            a {
+                display: inline;
+                margin-right: 8px;
+            }
+        }
+
+        span {
+            color: #fff;
+            font-size: 14px;
+
+        }
+
+    }
+}
+
+h1 {
+    a {
+        display: block;
+        font-size: 16px;
+    }
+
+
+}
+
+// // 设置媒体查询
+@media only screen {
+    @media (min-width:768px) {
+        body {
+            
+            .left-menu {
+
+                // &:active {
+                    
+                //     display: none;
+
+                // }
+                order: 2;
+                // 让左侧菜单把剩余空间占满
+                flex: auto;
+
+                // 增长宽度
+                //隐藏菜单图标
+
+                    .menu-icon{
+                          display: none; 
+
+                    }
+                    //显示菜单
+                    .nav{
+                        display: block;
+                        position: static;
+                        display: flex;
+                        padding: 0;
+                        background-color: #43c6ac;
+                        li{
+                            a{
+                                line-height: 48px;
+
+                            }
+                            span{
+                                display: none;
+                                }
+                            width: auto;
+                            border: none;
+                        }
+
+                    }
+            }
+
+            .logo {
+                order: 1;
+            }
+
+            .user-info {
+                order: 3;
+            }
+        }
+
+
+    }
+}

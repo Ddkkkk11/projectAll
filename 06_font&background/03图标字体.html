@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/fontawesome/css/all.css">
+    <link rel="stylesheet" href="/CSS/reset.css">
+    <styLe>
+        li {
+            font-size: 50px;
+            text-align: center;
+            list-style: none;
+            
+        }
+        
+
+        li::before {
+            /* 通过伪元素来设置图标字体
+                        1找到要设置图标的元素 通过before或者after选中
+                        2在content来设置字体的编码
+                        3 设置字体的样式
+                            fab  ；；；；；font-family: 'Font Awesome 6 Brands';
+                                            font-weight: 400; 
+                            
+                            
+                            fas：：：：： font-family: 'Font Awesome 6 Free';
+                                             font-weight: 900;
+                             */
+            content: '\f368';
+            font-family:'Font Awesome 6 Brands' ;
+            font-weight: 400;
+            color: black;
+            margin-right: 10px;
+
+        }
+    </styLe>
+</head>
+
+<body>
+    <!-- <i class=" fas fa-dog"></i> -->
+    <ul>
+        <li>锄禾日当午</li>
+        <li>汗滴禾下土</li>
+        <li>谁知盘中餐</li>
+        <li>粒粒皆辛苦 </li>
+    </ul>   
+    <span class="fas">
+        <!-- 通过实体来使用图标
+          &#x图标的编码;  
+        
+        
+        -->
+        
+        1   
+    </span>
+</body>
+
+</html>

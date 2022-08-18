@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+            border: orange 10px solid;
+                /* 内边距(padding)
+                --内容和边框直接的距离
+                --一共有四个方向的内边距
+                分别是 padding-top
+                       padding-right
+                       paddint-bottom
+                       padding-left
+                       内边距设置会影响盒子的大小
+                       背景颜色默认会延伸到内边距上 
+                       一个盒子可见框的大小是由内容区 内边距 边框大小一起决定的 
+                       在计算大小时需要将三个边距计算到一起*/
+                       padding-top: 100px;
+                       padding-left: 100px;
+                       padding-bottom: 100px;
+                       padding-right: 100px;
+                       /* 简写 padding 和border简写一样 */
+           
+        }
+        .box2{
+            width: 100%;
+            height: 100%;
+            background-color: aqua;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <div class="box2">内容区</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            .box1{
+                width: 96px;
+                height: 100px;
+                background-image: url(/03_layout/img/米兔img/动画图.png);
+                margin:  0 auto ;
+                animation: run 2s steps(4) 20;
+            }
+            @keyframes run {
+                from{
+                    background-position: 0 -300px;
+                }
+                to{
+                    background-position: -384px -300px;
+
+
+                }
+            }
+
+
+    </style>
+</head>
+<body>
+    <div class="box1"></div>
+    
+</body>
+</html>

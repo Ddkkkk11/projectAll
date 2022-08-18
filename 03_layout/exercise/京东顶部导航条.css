@@ -1,0 +1,61 @@
+.bigdiv{
+        height: 30px;
+    background-color: #E3E4E5;
+    
+}
+
+.bigdiv .tubiao a {
+            width: 14px;
+            height: 15.2px;
+            line-height: 30px;
+            float: left;    
+           
+            margin-left: 170.6px;
+            font-size: 14px;
+            color: #f10215;
+            margin-right: 4px;
+            
+}
+.zuobiao{
+    width: 58px;    
+    float: left;
+    height: 16px;   
+    font: 12px 微软雅黑 ;
+    color: #999999;
+    line-height: 30px;
+    margin-left: 5px;
+    
+}
+.nextdiv{
+        /* width: 803.11px; */
+    margin-left: 500px;
+
+}
+.bigdiv ul.nextdiv li{
+        float: left;
+        margin-right: 40px;
+        line-height: 30px;
+   
+
+}
+.bigdiv ul.nextdiv li a{
+   color: #999;
+
+
+}
+
+.bigdiv ul.nextdiv li a:hover{
+    color: #f10215;
+}
+
+    .bigdiv ul.nextdiv li:nth-child(2) a,.bigdiv ul.nextdiv li:nth-child(6) a{
+
+      color: #f10215;
+
+}
+.bigdiv ul.nextdiv li a{
+    font: 12px 微软雅黑;
+    height: 16px;
+
+}
+

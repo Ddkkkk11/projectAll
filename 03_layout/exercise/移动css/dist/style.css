@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.w,
+div.top-bar,
+div.banner-img,
+div.menu,
+.course-list {
+  width: 17.325rem;
+  margin: 0 auto;
+}
+html {
+  font-size: 5.33333333vw;
+  background-color: #EEF0F2;
+}
+a {
+  text-decoration: none;
+}
+div.top-bar {
+  display: flex;
+  height: 4.375rem;
+  line-height: 4.375rem;
+  justify-content: space-between;
+  align-items: center;
+}
+div.top-bar a {
+  color: #242632;
+  font-size: 1.25rem;
+}
+div.top-bar a i {
+  color: #999;
+  font-size: 1rem;
+}
+div.banner-img img {
+  width: 17.325rem;
+  margin: 0 auto;
+  height: 7.95rem;
+}
+div.menu {
+  height: 8.25rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-content: space-evenly;
+}
+div.menu a {
+  height: 2.6rem;
+  width: 8.175rem;
+  display: block;
+  margin-left: 0.25rem;
+  line-height: 2.6rem;
+  color: #fff;
+  border-radius: 0.5rem;
+}
+div.menu a i {
+  margin: 0 0.8rem 0 0.95rem;
+}
+div.menu .course {
+  background-color: #FF7B4D;
+}
+div.menu .star {
+  background-color: #CE74FF;
+}
+div.menu .sub {
+  background-color: #FF5171;
+}
+div.menu .download {
+  background-color: #0E9FFF;
+}
+.item-list {
+  width: 18rem;
+  display: flex;
+}
+.course-list {
+  overflow: auto;
+  height: 9.85rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  margin-bottom: 1.15rem;
+}
+.course-list .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.course-list .title h2 {
+  font-size: 0.825rem;
+  color: #24253d;
+  border-left: 0.125rem solid #0E9FFF;
+  padding-left: 0.25rem;
+}
+.course-list .title a {
+  font-size: 0.7rem;
+  color: #707274;
+}
+.item {
+  flex: none;
+  margin-right: 0.6rem;
+  box-sizing: border-box;
+  padding: 0 0.25rem;
+  width: 8rem;
+  height: 8.1rem;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 0.25rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-evenly;
+}
+.item img {
+  width: 100%;
+}
+.item .course-title {
+  font-size: 0.8rem;
+  color: #24253d;
+}
+.item .nickname {
+  font-size: 0.6rem;
+  color: #969393;
+  margin-left: 0.25rem;
+}
+.item .user-info {
+  display: flex;
+}

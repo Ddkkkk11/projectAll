@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        /* div.sec {
+            height: 250px;
+            width: 5px;
+            border-radius: 50%;
+            background-color: black;
+            margin: 200px auto;
+            animation-name: run;
+            animation-duration: 60s;
+        } */
+        /* .sec-wrapper {
+            width: 500px;
+            height: 500px;
+            background-color: transparent;
+            animation: run 60s;
+            margin: 0 auto;
+        } */
+        /* body:hover .sec{
+            transform: rotateZ(180deg);
+        } */
+        @keyframes run {
+            from {
+                transform: rotateZ(0);
+            }
+            to {
+                transform: rotateZ(360deg);
+            }
+
+        }
+        .clock{
+            width: 500px;
+            height: 500px;
+            /* background-color: #bfa; */
+            margin: 0 auto ;
+            margin-top: 100px;
+            border-radius: 50%;
+            border: 10px solid black;
+            position: relative;
+        }
+        /* 设置时针样式 */
+            .hour-wrapper{
+                width: 60%;
+                height: 60%;
+                background-color: transparent;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right:0;
+                bottom: 0;
+                margin: auto;
+                animation: run 36s;
+            }
+            .hour{
+                width: 60%;
+                height: 10px;
+                background-color: black;
+                position: absolute;
+                margin: auto 0;
+                left: -30px;
+                top: 145px;
+            }
+            .minute-wrapper{
+                width: 80%;
+                height: 80%;
+                background-color: transparent;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right:0;
+                bottom: 0;
+                margin: auto;
+                animation: run 36s  3s;
+
+
+            }
+            .minute{
+                width: 200px;
+                height: 5px;
+                background-color: black;
+                position: absolute;
+                top: 197.5px;
+            }
+
+
+    </style>
+</head>
+
+<body>
+    <!-- 创建表的容器 -->
+            <div class="clock">
+                <!-- 创建时针 -->
+                <div class="hour-wrapper">
+                    <div class="hour">
+                        </div>
+                    </div>
+                <div class="minute-wrapper">
+                    <div class="minute"></div>
+                </div>                    
+                </div>
+
+           
+
+</body>
+
+</html>

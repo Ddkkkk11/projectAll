@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 属性选择器
+        语法 p[属性]{}
+        语法 p[属性=属性值]
+        属性值以指定值开头的选择 p[属性值^="he"]
+        属性值以指定值结尾的选择 p[属性值$="he"] 
+        属性值中含有某些元素的选择p[属性值*="是"]*/
+       p[title*="是"] {
+        color: red;
+}
+    </style>
+</head>
+<body>
+    
+    <p title="我是一个程序员">我是1</p>
+    <p title="hello">我是2</p>
+    <p id="box">我说3</p>
+    <p id="hq">我是4</p>
+    <p>我是5</p>
+</body>
+</html>

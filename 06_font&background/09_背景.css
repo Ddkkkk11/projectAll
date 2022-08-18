@@ -1,0 +1,16 @@
+.box1{
+    width: 500px;
+    height: 500px;
+    background-color: red;
+    /* 设置背景颜色
+        background-color
+         
+         background-image: ;
+         用来设置背景图片的 
+        可以同时设置背景颜色和图片
+    */
+    background-image: url(./img/xiaotusss.png)
+   
+
+
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+       
+        @keyframes run {
+            from {
+                transform: rotateZ(0);
+            }
+            to {
+                transform: rotateZ(360deg);
+            }
+
+        }
+        .clock{
+            width: 500px;
+            height: 500px;
+            /* background-color: #bfa; */
+            margin: 0 auto ;
+            margin-top: 100px;
+            /* border-radius: 50%; */
+            border: 10px solid black;
+            position: relative;
+            background-image: url(/03_layout/img/1.jpg);
+            background-size: cover;
+        }
+        .clock>div{
+            position: absolute;
+                left: 0;
+                top: 0;
+                right:0;
+                bottom: 0;
+                margin: auto;
+
+
+
+
+        }
+        /* 设置时针样式 */
+            .hour-wrapper{
+                height: 70%;
+                width: 70%;
+                animation: run 7200s linear infinite;
+
+            }
+            .hour{
+                height: 50%;
+                width: 6px;
+                background-color: black;
+                margin: 0 auto;
+                
+            }
+            .minute-wrapper{
+                width: 80%;
+                height: 80%;
+                animation: run 600s  steps(60) infinite;
+
+
+            }
+            .minute{
+                height: 50%;
+                width: 4px;
+                background-color: black;
+                margin: 0 auto;
+            }
+
+            .sec-wrapper{
+                width: 95%;
+                height: 95%;
+                animation: run 10s steps(60) infinite;
+            }
+            .sec{
+                height: 50%;
+                width: 2px;
+                background-color: #ff0000;
+                margin: 0 auto;
+
+
+            }
+
+    </style>
+</head>
+
+<body>
+    <!-- 创建表的容器 -->
+            <div class="clock">
+                <!-- 创建时针 -->
+                <div class="hour-wrapper">
+                    <div class="hour">
+                        </div>
+                    </div>
+                    <!-- 创建分针 -->
+                <div class="minute-wrapper">
+                    <div class="minute"></div>
+                </div>  
+                    <!--创建秒针  -->
+                    <div class="sec-wrapper">
+                        <div class="sec"></div>
+
+                    </div>
+                </div>
+
+           
+
+</body>
+
+</html>

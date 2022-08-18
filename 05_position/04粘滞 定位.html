@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/03_layout/消除默认样式.css">
+</head>
+<style>
+    body{
+
+        height: 3000px;
+
+
+
+
+
+    }
+    /* 设置nav的大小 */
+    .nav{
+        /* 设置宽度和高度 */
+            width: 1186px;
+            height: 48px;
+            /* 设置背景颜色 */
+            background-color: #E8E7E3;
+            /* 粘滞定位
+                    当元素position属性设置为sticky时则开启了元素的粘滞定位
+                    --粘滞定位和相对定位的特点基本上一样，但是不同的是粘滞定位可以在元素到达某个位置的时候将其固定 */
+
+
+                    margin-top: 200px;
+            position: sticky;
+            top: 100px;
+    }
+    .nav li{
+        /* 设置li向左浮动 */
+        float: left;
+        background-color: #E8E7E3;
+      /* 将文字在父元素中水平居中 */
+        line-height: 48px;
+        
+
+    }
+    .nav a{
+        /* 将a转换为块元素 */
+      
+        display: block;
+        color: #777;
+        font-size: 18px;
+        line-height: 48px;
+        padding: 0px 39px;
+
+    }
+    .nav a:hover{
+        background-color: #3f3f3f;
+        color: #E8E7E3;
+
+
+    }
+    
+    
+
+</style>
+<body>
+
+    <ul class="nav">
+        <li >
+            <a href="#">HTML/CSS</a>
+
+        </li>
+        <li>
+            <a href="#">Browser Side</a>
+
+        </li>
+        <li>
+            <a href="#">Sever Side</a>
+
+        </li>
+        <li >
+            <a href="#">Programming</a>
+
+        </li>
+        <li >
+            <a href="#">XML</a>
+
+        </li>
+        <li >
+            <a href="#">Web Building</a>
+
+        </li>
+        <li >
+            <a href="#" >Refrence</a>
+
+        </li>
+    </ul>
+</body>
+</html>

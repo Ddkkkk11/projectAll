@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+        }
+        /* .box1::before{
+                content: '';
+                display: table;
+
+
+        } */
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: #baf;
+            margin-top: 100px;
+
+
+        }
+        /* display 既可以解决高度塌陷 又可以解决外边距重叠 */
+        /* clearfix 这个样式可以同时解决高度塌陷和外边距重叠 再次遇到类似问题直接使用clearfix这个类即可 */
+        .clearfix::before,.clearfix::after{
+            /* 添加内容 */
+            content: '';
+             /*转换为表格   */
+            display: table;
+            /* 消除浮动元素的影响 */
+            clear: both;
+
+
+        }
+       
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="box1 clearfix">
+        <div class="box2"></div>
+    </div>
+
+
+
+
+</body>
+
+</html>

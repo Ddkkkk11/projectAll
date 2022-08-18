@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        ul {
+            width: 600px;
+            height: 800px;
+
+            border: 10px solid;
+            display: flex;
+            flex-direction: row;
+           
+            /* align-items: ;
+            --元素在辅轴上如何对齐 
+                --元素间的关系
+            可选值
+            -stretch 默认值，将元素的长度设置为相同的值
+            flex-start 元素不会拉伸 会沿着起边对齐
+            flex-end沿着辅轴终边对齐
+            center 居中对齐
+            baseline 基线对齐 和起边对齐的原因是元素大小一样看不出来
+                    */
+                    flex-wrap: wrap;
+                align-items: flex-start;
+            /* align-content: ;辅轴上空白空间的分配
+            flex-start flex-end
+            space-around  */
+            
+            align-content: flex-end;
+        }
+                
+
+        li {
+            width: 200px;
+            background-color: #bfa;
+            font-size: 50px;
+            text-align: center;
+            line-height: 100px;
+            flex-shrink: 0;
+
+
+            
+        }
+
+        li:nth-child(1) {
+            background-color: antiquewhite;
+            /* align-self: ; 用来覆盖弹性元素的align-item*/
+             align-self: flex-end;
+            
+        }
+
+        li:nth-child(2) {
+            background-color: orange;
+        }
+
+        li:nth-child(3) {
+            background-color: pink;
+        }
+        li:nth-child(4){
+            background-color: yellow;
+        }
+        li:nth-child(5){
+            background-color: #baf;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <ul>
+        <li>1</li>
+        <li>2
+            <div>2</div>
+        </li>
+        <li>3
+            <div>3</div>
+            <div>3</div>
+        </li>
+        <li>
+            1
+        </li>
+        <li>
+            1
+        </li>
+       
+    </ul>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./iconfont/download (2)/iconfont.css">
+
+        <style>
+               
+            i.iconfont{
+
+                font-size: 50px;
+
+                margin: 0 50px;
+
+            }
+            /* 伪类方法的导入图标 */
+                p::before{
+                    content: '\e69a';
+                    font-family: 'iconfont';
+                    font-size: 100px;
+                      
+                }
+    </style>
+</head>
+<body>
+    <!-- 实体导入 类名必须设置为iconfont   -->
+  <i class="iconfont">&#xe696;</i>
+  <i class="iconfont">&#xe698;</i>
+  <i class="iconfont">&#xe6ba;</i>
+  <!-- 类名导入   格式
+    <span class="iconfont icon-xxx"></span> -->
+  <i class="iconfont icon-delete "></i>
+  <p>
+      hello
+  </p>
+    
+</body>
+</html>

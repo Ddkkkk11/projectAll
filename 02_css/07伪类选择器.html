@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul>li:not(:nth-child(2)){
+            color: seagreen;
+        }
+        /* 伪类选择器（不存在的类 特殊的类）    
+        伪类用来描述元素的特殊状态
+        比如第一个元素  被点击的元素 鼠标移入的元素
+        --伪类的特点  伪类一般使用:开头
+         ul>li:first-child 第一个子元素 
+         last 
+          ul> nth-child()特殊值:
+         ul> nth-child(n)  选中所有n的子元素
+         ul> nth-child(2n) 或者even 选中所有偶数的子元素
+         ul> nth-child(2n+1)或者odd  选中所有奇数的子元素
+        -以上这些伪类的顺序都是根据所有的元素进行排序
+        :first-of-type
+        :last-of-type
+        :nth-of-type() 表示同类型的顺序
+        :not() --否定伪类
+          */
+        
+    </style>
+</head>
+<body>
+    <ul> 
+        <span>我是一个span</span>
+        <li class="green">第一二个</li>
+        <li class="green">第一二个</li>
+        <li class="green">第一个</li>
+        <li class="green">第一个</li>
+        <li>第二个</li>
+        <li>第三个  </li>
+        <li>第四个</li>
+        <li>第五个</li>
+    </ul>
+     
+    
+</body>
+</html>

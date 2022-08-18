@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .box1 {
+            border: 10px #bfa solid;
+
+            /* clear: left; */
+        }
+
+        .box2 {
+
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+            float: left;
+
+        }
+
+        .box1::after {
+            content: '我是一个样式';
+            clear: left;
+            /* 把行内元素转换为块元素 */
+            display: table;
+
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="box1">
+        <div class="box2">      </div>
+        <!-- <div class="box3"></div> -->
+    </div>
+</body>
+
+</html>

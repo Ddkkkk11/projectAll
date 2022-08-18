@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       /* 伪元素表示页面中不是真是存在的元素
+       伪元素的使用::开头
+       ::first-letter表示第一个字母
+       ::first-line表示第一行
+       ::selection表示选中的元素（鼠标）
+       ::before表示在最前面
+       ::after表示在最后
+       需要结合content来使用*/
+        p::first-line{
+            font-size: 30px;
+            color: chartreuse;
+        }
+        p::selection{
+           
+            background-color: cornflowerblue;
+        }
+        div::before{
+            content: 'asd';
+        }
+        div::after{
+            content: 'dsa';
+        }
+    </style>
+</head>
+<body>
+    <div>GF</div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem placeat tenetur laboriosam aut minus natus iste blanditiis est dolores, soluta alias unde modi ea maiores magni, ex ipsam expedita assumenda?</p>
+    
+</body>
+</html>

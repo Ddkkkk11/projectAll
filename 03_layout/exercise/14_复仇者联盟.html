@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+
+            perspective: 800px;
+
+        }
+        .cube {
+            width: 200px;
+            height: 200px;
+            /* background-color: #bfa; */
+            margin: 100px auto;
+            /* perspective: 800px; */
+            transform-style: preserve-3d;
+            /* transform: rotateZ(45deg) rotateX(45deg) ; */
+            animation: run 10s;
+        }
+
+        .cube>div {
+            width: 200px;
+            height: 200px;
+            /* 为元素设置透明效果 */
+            opacity: 0.7;
+            position: absolute;
+
+        }
+
+        div.box1 {
+            transform: rotateY(90deg) translateZ(100px);
+
+
+        }
+
+        div.box2 {
+            transform: rotateY(-90deg) translateZ(100px);
+
+
+        }
+
+        div.box3 {
+            transform: rotateX(90deg) translateZ(100px);
+        }
+
+        div.box4 {
+            transform: rotateX(-90deg) translateZ(100px);
+
+
+        }
+
+        div.box5 {
+            transform: rotateY(180deg) translateZ(100px);
+        }
+
+        div.box6 {
+            transform: rotateY(0deg) translateZ(100px);
+        }
+        @keyframes run {
+            from {
+                transform: rotateX(0) rotateZ(0);
+
+            }
+
+            to {
+                transform: rotateX(1turn) rotateZ(1turn);
+
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 创建一个外部容器 -->
+    <div class="cube">
+        <!-- 引入图片 -->
+        <div class="box1">
+            <img src="/03_layout/exercise/img复仇者联盟/11.png">
+        </div>
+        <div class="box2">
+            <img src="/03_layout/exercise/img复仇者联盟/22.png">
+        </div>
+        <div class="box3">
+            <img src="/03_layout/exercise/img复仇者联盟/33.png">
+        </div>
+        <div class="box4">
+            <img src="/03_layout/exercise/img复仇者联盟/44.png">
+        </div>
+        <div class="box5">
+            <img src="/03_layout/exercise/img复仇者联盟/55.png">
+        </div>
+        <div class="box6">
+            <img src="/03_layout/exercise/img复仇者联盟/66.png">
+        </div>
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* .box1{
+            width: 200px;
+            height: 200px;
+            background-color: #bfa;
+
+
+        }
+        .box2{
+            width: 200px;
+            height: 400px;
+            background-color: black;
+        } */
+             .outder{
+                background-color: #bfa;
+                width: 100px;
+                height: 100px;
+                /* 默认情况下父元素会被子元素撑开 */
+
+             }
+            .inner{
+                background-color: orange;
+                width: 50px;
+                height: 200px;
+
+
+
+            }
+            .box1{
+                width: 200px;
+                background-color: #bfa;
+                height: 200px;
+                    /* 子元素是在父元素中排列的
+                            如果子元素的大小超出了父元素，则子元素会从父元素中溢出
+                            使用overflow 可以来设置父元素如何处理溢出
+                                --可选择的值
+                                visibal 默认值 子元素会从父元素中溢出，在父元素的外部显示   
+                                hidden 溢出的内容将会被隐藏
+                                scroll生成两个滚动条，通过滚动条来查看完整的内容
+                                auto根据需要生成滚动条 */
+                /* overflow-x:  单独处理水平方向的
+                overflow-y:     单独处理垂直方向上的*/
+            }
+            .box2{
+                width: 100px;
+                height: 400px;
+                background-color: orange;
+
+
+            }
+
+    </style>
+</head>
+
+<body>
+    
+   <div class="box1">
+       <div class="box2"></div>
+   </div>
+</body>
+</html>

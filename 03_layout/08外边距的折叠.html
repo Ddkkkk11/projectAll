@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1,.box2{
+            width: 200px;
+            height: 200px;
+            font-size: 100px;;
+
+        }
+        .box1{
+            background-color: #bfa;
+            /* 设置一个下外边距
+             */
+             
+             margin-bottom: 100px;
+        }
+        /* 垂直外边距的折叠
+            -相邻的垂直方向的外边距才会发生折叠
+            -兄弟元素
+                 -兄弟元素间的垂直外边距取最大值  两者都是正值的话 
+                    特殊情况
+                    相邻两者之间 一正衣负 则外边距取两者之和
+                    如果相邻的外边距都是负值 取绝对值大的（较小的）
+                    兄弟元素之间的外边距的重叠对实际开发是有利的  所以我们不需要处理
+
+            --父子元素之间相邻的外边距 子元素会传递给父元素
+                父子外边距的折叠会影响页面的布局 所以我们需要对它进行处理
+
+                  */
+        .box2{
+            background-color:orange;
+            margin-top: 100px;
+            /*  设置了不起作用 因为上下外边距的重叠 */
+
+        }
+        .box3{
+                width: 200px;
+                height: 200px;
+                background-color:#bfa;
+                /* padding-top: 100px; */
+                border:  1px #bfa solid;
+        }
+            .box4{
+
+                width: 100px;
+                height: 100px;
+                background-color:black;
+                 margin-top: 100px; 
+                
+
+            }
+    </style>
+</head>
+<body>
+    <!-- <div class="box1"></div>
+    <div class="box2"></div> -->
+        <div class="box3">
+            <div class="box4"></div>
+        </div>
+</body>
+</html>

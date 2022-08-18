@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .box1{
+            width: 44px;
+            height: 30px;
+            background-image: url(../img/亚马逊雪碧图.png);
+            background-position: -58px -338px;
+
+
+ 
+        }
+        .box2{
+
+            width: 112px;
+            height: 36px;
+            background-image: url(/03_layout/img/亚马逊雪碧图.png);
+            background-position: -8px -8px;
+
+
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <!-- 解决图片闪烁的问题：
+        可以将多个小图片保存到一个大图片里面 ，图片就会同时加载到网页中，需要的时候 通过
+        background-position 在对应的状态让图片移动相应的距离 
+    可以有效的避免闪烁问题 
+        在网页中应用很广泛，被称为css-sprite 又称雪碧图
+    
+        雪碧图的使用步骤
+        1.先确定要使用的图标
+        2.测量图标的大小    
+        3.根据测量结果创建一个元素
+        4.将雪碧图设置为元素的背景图片
+        5.设置偏移量来显示正确的图片
+
+     雪碧图的特点 
+            一次性将多个图片加载进来，降低请求的次数，加快访问速度 提升用户体验    
+
+
+    -->
+    <div class="box1"></div>
+    <div class="box2"></div>
+
+    
+</body>
+</html>

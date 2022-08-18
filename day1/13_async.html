@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>asyns异步操作</title>
+</head>
+
+<body>
+    <script>
+        //Generator Promise async  1.解决回调地狱的问题 2.使得异步操作更加方便
+
+
+        //使得异步操作更加方便
+        //基本操作 会返回一个promise对象    有了promise 就能使用then catch
+        //async是Generator的一个语法糖
+        async function fn() {
+
+            // return await 'hello asyns'; //会把这个字符串转换为promise
+            const s = await 'helloWorld';
+            const data = await s.split('');
+            return data;
+
+        };
+        //如果asyns函数中 有多个await 那么then函数会等待所有的await指令 运行完的结果才去执行    (val) => { console.log(val); })
+        fn().then((val) => { console.log(val); }).catch(err => { console.log(err); });
+        async function fn1() {
+            // throw new Error('出错了');
+
+            try {
+                await Promise.reject("出错了");
+            } catch (error) {
+            }
+
+            //加入一个异步操作失败了
+            return await Promise.reject("hello");
+        };
+        fn1().then(v => console.log(v)).catch(e => console.log(e));
+
+
+
+
+
+        const getJSON = (url) => {
+            return new Promise((resolved, rejected) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", url);
+                xhr.onreadystatechange = callBack;
+                //返回数据类型
+                xhr.responseType = 'json';
+                xhr.setRequestHeader = ("Accept", "application/json");
+                xhr.send();
+                function callBack() {
+
+                    if (this.readyState === 4) {
+                        if (this.status == 200) {
+                            resolved(this.response);
+                        } else {
+                            rejected(new Error(this.statusText));
+                        }
+                    }
+                };
+            })
+        };
+        //  需求 :向获取和风天气 现在now的数据
+
+        async function getNowWeather(url) {
+            //发送AJAX  获取实况天气  获取未来三到七天的天气状况
+            const res = await getJSON(url);
+            console.log(res);
+            //获取heWeather6的数据
+            const arr = await res.HeWeather6;
+            return arr[0];
+        };
+        getNowWeather('https://free-api.heweather.net/s6/weather/now?location=101100102&key=db86a5196f304e52a4369818c5182e60')
+            .then(now => console.log(now));
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

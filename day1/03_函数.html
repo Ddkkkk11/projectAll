@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.带默认值的函数
+
+        //es5的写法
+        /*  function add(a, b) {
+             a = a || 10;
+             b = b || 20;
+             return a+b;
+         };
+         add();
+         console.log(add()); */
+        //es6
+        /*   function add(a = 10, b = 20) {
+              return a + b;
+          };
+          console.log(add(1,2)); */
+        //2,默认的表达式也可以是一个函数
+        /*  function add(a, b = getValue(5)) {
+             return a + b;
+         };
+         function getValue(val) {
+ 
+             return val + 5;
+         };
+         console.log(add(1)); */
+
+
+
+        //es5写法
+        /* let book = {
+            title: "es6",
+            leaner: "xdd",
+            year: 2022
+        };
+        function pick(obj) {
+            let result = Object.create(null);
+            for (let index = 1; index < arguments.length; index++) {
+                result[arguments[index]] = obj[arguments[index]];
+                // console.log(arguments[index]);
+            }
+            return result;
+
+        };
+        let bookDate = pick(book, "leaner", "year", "title");
+        console.log(bookDate);
+ */
+        //3 剩余参数 由三个点...和一个紧跟着的具名参数指定        ...keys
+        /*  function pick(obj, ...keys) {
+             //...keys解决了arguments的问题
+             // console.log(keys);
+             let result = {};
+             for (let index = 0; index < keys.length; index++) {
+                 result[keys[index]] = obj[keys[index]];
+             };
+             return result;
+         };
+         let book = {
+             title: "es6",
+             leaner: "xdd",
+             year: 2022
+         };
+         let bookDate = pick(book, "leaner", "year", "title");
+         console.log(bookDate);
+         function checkArgs(...args) {
+             console.log(args);
+         };
+         checkArgs("asd", "Asdqwe", "asdqwzxc"); */
+        //4.扩展运算符
+        //剩余运算符:把多个独立的参数合并到一个数组中
+        //扩展运算符:将一个数组分割,并将各个项作为分离的参数传给函数
+
+        /*   const maxNumber = Math.max(20, 23);
+          console.log(maxNumber);
+  
+          //处理数组中的最大值使用apply
+          const arr = [1, 23, 45, 56, 345, 768, 123];
+          // console.log(Math.max.apply(null, arr));
+          //es6使用扩展运算符
+          console.log(Math.max(...arr)); */
+        //es6的箭头函数 ******************
+        // 使用=>来定义     function(){};  等价于()=>{}
+        /*  let add = function (a, b) {
+             return a + b;
+         };
+         add(123,123);
+         console.log(add(123,123)); */
+        //多个参数
+        /*   const get = (a, b) => {
+              return a+b;
+          }; */
+        // console.log(get(213,123));
+        //单个参数
+        /* const sum = num => {
+            return num + 10;
+        }; */
+        //如果只返回参数
+        //如果只有一个参数
+        /*  const sum = numB => (numB + 10);
+         console.log(sum(12));   
+         const qwe=asd=>(asd*10);
+         console.log(qwe(123)); */
+        /*  const suM = (r, q) => (r + q);
+         console.log(suM(1, 2));
+         //没有参数
+         const i = () => 'helloWorld';
+         console.log(i()); */
+
+        /*  const getObj=id=>{
+
+             return{
+                 id:id,
+                 name:"xdd"
+             };
+         }
+         const result=getObj(1);
+         console.log(result); */
+        /*   const getObj = id => ({ id: id, name: "薛军dong" })
+           const result=getObj(2);
+           console.log(result); */
+        /*  const fn = (function () {
+             return function () {
+                 console.log("hello Es6");
+             };
+         })();
+         fn(); */
+        /*   const fn = (() => {
+              return (() => console.log("hello"))
+          })();
+          fn(); */
+        //es5中this指向取决于调用函数的上下文对象
+        /* const PageHandle = {
+            id: 123,
+            init: function () {
+                document.addEventListener('click', function () {
+                    // this.doSomething is not a function
+                    console.log(this);
+                    this.doSomething(event.type);
+                })
+
+            },
+            doSomething: function (type) {
+                console.log(`事件类型${type},当前id${this.id}}`);
+            }
+
+        };
+        PageHandle.init() */
+        const PageHandle = {
+            id: 123,
+            init: function () {
+                //箭头函数没有this指向,箭头函数内部的this只能通过查找作用域链来确定
+                //一旦使用箭头函数当前不存在作用域链
+                document.addEventListener('click', () => {
+                    // this.doSomething is not a function
+                    console.log(this);
+                    this.doSomething(event.type);
+                }, false)
+
+            },
+            doSomething: function (type) {
+                console.log(`事件类型${type},当前id${this.id}}`);
+            }
+
+        };
+        PageHandle.init()
+        // /使用箭头函数函数的注意释放 
+        //1.使用箭头函数 函数内部没有arguements
+        /*   const getVal=()=>{
+              console.log(arguements);
+          }; */
+
+        //2.箭头函数不能使用new来进行实例化对象
+        const Person = () => { };
+        console.log(Person);
+        console.log(fn);
+        //function函数,也是一个对象但是 箭头函数不是一个对象,他其实就是一个语法糖但是不是对象
+        const per = new Person();
+    </script>
+</body>
+
+</html>

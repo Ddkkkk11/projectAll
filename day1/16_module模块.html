@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>module模块</title>
+</head>
+
+<body>
+
+    <script type="module">
+        import Person, { name, age, gender, sayName } from './modules/index.js'//居多
+        // import * as f from './modules/index.js'
+        //JS模块化编程不是很友好
+        //cmd commonjs
+        //es6 module成为了浏览器和服务器通用的模块机制方案
+
+        // console.log(name, gender, age, sayName());
+        // console.log(obj); //obj可以是任意名字
+        // console.log(f.age);
+        // console.log(f.default);//想取到default
+        const p = new Person();
+        p.sayAge();
+        console.log(Person);
+
+    </script>
+
+
+</body>
+
+</html>

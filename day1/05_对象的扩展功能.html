@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // //  es6  直接写入变量和函数,作为函数的属性和放法
+        // const name = "xdd", age = 20;
+        // const obj = {
+        //     name,//== //name:name,
+        //     age, // age:age,
+        //     sayName() {
+        //         console.log(this.name);
+        //     }
+        // };
+        // obj.sayName();
+        // /* function fn(x, y) {
+        //     return {x,y}
+        // }; */
+        // // const fn = (x, y) => ({ x, y });
+        // // console.log(fn(1, 2));
+        // const f = {
+        //     wheel: 4,
+        //     set(newValue) {
+        //         if (newValue < this.wheel) {
+        //             throw new Error(`轮子太少了你得大于${this.wheel}`);
+        //         }
+        //         this.wheel = newValue;
+        //     },
+        //     get() {
+        //         return this.wheel;
+        //     }
+        // };
+        // f.set(6);
+        // console.log(f.get());//4
+        /*   const obj = {};
+          obj.isShow = true;
+          const name = "a";
+          obj[name + "bc"] = 123;
+          console.log(obj);
+          obj['f'+'fad']=()=>{
+              console.log(this);
+          } */
+        // const name = "a";
+        // const obj = {
+        //     isShow: true,
+        //     [name + "bc"]: 123,
+        //     ['f' + "qwe"]() {
+        //         console.log(this);
+        //     }
+        // };
+        // console.log(obj);
+        //对象的方法
+        //is()  等价于=== 比较两个值是否完全相等  NAN===NAN false
+        // console.log(Object.is(+0, -0));//false
+        // console.log(+0 === -0);//true
+        // console.log(Number.isNaN(NaN));
+        //比较NaN
+        console.log(Object.is(NaN, NaN));
+        //assign()**********************
+        //对象的合并
+        // Object.assign(target,obj1,obj2,obj3........)
+        const obj1 = { name: "asd" };
+        const obj2 = { name: "qwe" };
+        const obj3 = { name: "zxc" };
+        const obj4 = { name: "asdfgd" };
+        //返回了合并之后的新对象 ,如果要合并的对象里面 属性名字一样 会覆盖
+        const newObj = Object.assign({}, { name: "asd" }, { naagme: "qweasd" }, { naqweme: "asqwed" }, { nazxcme: "zxcasd" });
+        console.log(newObj);
+    </script>
+</body>
+
+</html>

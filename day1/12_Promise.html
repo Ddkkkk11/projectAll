@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise</title>
+</head>
+
+<body>
+
+    <script>
+        //promise 承诺
+        //相当于一个容器,保存着未来才会结束的事件(异步操作)的结果
+        //各种异步操作都可以用同样的的方法进行处理
+
+        //特点
+        //1.对象的状态不受外界的影响 处理异步操作 三个状态 pending(处理中) resolved(成功) Rejected(失败)
+        //2.一旦状态改变,不会继续变化   (比如发送成功了 不会变成失败)任何时候我们都可以得到这个结果
+
+        /*let pro = new Promise((resolved, rejected) => {
+            //执行异步操作
+            let result = {
+                code: 201,
+                data: {
+                    name: "xdd"
+
+                },
+                error: '再试试吧 失败了'
+
+            };
+            setTimeout(() => {
+                //检测发送成功
+                if (result.code === 200) {
+                    //成功后吧data返回
+                    resolved(result.data);
+                } else {
+                    //rejected 请求失败
+                    rejected(result.error);
+
+                }
+
+            }, 2000);
+        });
+
+        console.log(pro);
+        //执行完异步操作后 成功后执行的
+        pro.then((value) => {
+            console.log(value);
+
+        }, (err) => {
+            console.log(err);
+
+        });*/
+        /* 
+                function timeOut(ms) {
+                    return new Promise((resolved, rejected) => {
+        
+                        setTimeout(() => {
+                            resolved("hello promise");
+                        }, ms)
+        
+                    })
+        
+                };
+                timeOut(5000).then((val) => {
+                    console.log(val);
+                });
+        
+         */
+        //封装
+        const getJSON = (url) => {
+            return new Promise((resolved, rejected) => {
+                const xhr = new XMLHttpRequest();
+                xhr.open("GET", url);
+
+                xhr.onreadystatechange = callBack;
+                //返回数据类型
+                xhr.responseType = 'json';
+                xhr.setRequestHeader = ("Accept", "application/json");
+                xhr.send();
+
+                function callBack() {
+
+                    // console.log(this.readyState);
+                    // if (this.readyState === 4 &&
+                    //     (this.status >= 200 && this.status < 300)) {
+                    //     console.log(this.response);
+                    // }
+
+                    if (this.readyState === 4) {
+                        if (this.status == 200) {
+                            resolved(this.response.HeWeather6);
+                        } else {
+                            rejected(new Error(this.statusText));
+                        }
+                    }
+                };
+            })
+        };
+        /*   getJSON("https://free-api.heweather.net/s6/weather/now?location=101100102&key=db86a5196f304e52a4369818c5182e60").then((val) => {
+              console.log(val);
+          }, (err) => {
+              console.log(err);
+  
+          }); */
+        // const a = getJSON("https://free-api.heweather.net/s6/weather/now?location=101100102&key=db86a5196f304e52a4369818c5182e60").then((val) => {
+        //     // console.log(val);   //Promise {<pending>}
+        //     return val[0]; //val是resolved成功发送后的返回值 也就是this.response.HeWeather6  obj是val[0]
+        // }).then((obj) => {
+        //     console.log(obj);//当前对象
+        // });
+        // console.log(a);//promise 对象
+        /*  */
+
+
+        //then(null, err => {  }); 等价于 .catch
+
+
+        getJSON("https://free-api.heweather.net/s6/weather/now?location=101100102&key=db86a5196f304e52a4369818c5182e60").
+            then(val => {
+
+
+                console.log(val);
+
+            }).catch(err => {
+                console.log(err);
+            });
+
+
+
+
+
+
+
+
+
+        //then()方法
+        //then()第一个参数是 resolved()回调函数,第二个参数是可选的 是rejected状态的回调函数
+        //then()返回的是一个新的promise实例,可以采用链式编程
+
+        //promise resolve() reject() all() race() done()  finnally()
+
+        //   reject()  resolve()/*  */ 可以把现有的对象转换为promise对象 Promise.resolve();
+        // const p = Promise.resolve("foo");等价于const p=new Promise(resolved=>resolve("foo"));
+        // const p = new Promise(resolved => resolved("foo"));
+        // // console.log(p);
+        // p.then((data) => { console.log(data); });
+        const promise1 = new Promise((resolve, reject) => { });
+        const promise2 = new Promise((resolve, reject) => { });
+        const promise3 = new Promise((resolve, reject) => { });
+        const intal = Promise.all([promise1, promise2, promise3]);
+        //异步并行 一些游戏类的素材比较多,等待图片,flash,静态资源文件 ,都加载完成然后才进行初始化
+        intal.then(() => {
+            //表示三个上面的都成功了 才成功
+            //否则走向catch中
+        }).catch(() => {
+            //如果有一个失败 则失败 
+        })
+
+
+        //race()    某个异步请求设置超时的时间,并且在超时后执行相应的操作  参数 接受一个数组
+        //1.请求一个图片资源
+        function requestImg(imgSrc) {
+
+
+            return new Promise((resolve, reject) => {
+                const img = new Image()
+                img.onload = () => {
+                    resolve(img);
+                };
+                img.src = imgSrc;
+            });
+        };
+        function timeOut() {
+
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    reject(new Error('图片请求失败'));
+                }, 3000);
+            })
+        };
+        const obj = Promise.race([requestImg('https://img0.baidu.com/it/u=530426417,2082848644&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500'), timeOut()]);
+
+        obj.then((data) => {
+            console.log(data);
+            document.body.appendChild(data);
+        }).catch(rea => { console.log(rea); });
+
+        /*server.listen(3000).then(()=>{
+
+        }).finally(server.stop())  */
+    </script>
+</body>
+
+</html>

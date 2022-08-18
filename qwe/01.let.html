@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 声明变量 
+        let a;
+        let b, c, d;
+        let f = 521, g = "I LOVE YOU", h = [];
+        // 1.变量不能重复声明
+        // let star="xjd";
+        // let star="qwe";
+        // 2.块级作用域 全局作用域 函数作用域 eval
+        // 只能在代码块里面有效  let    不只是在代码块中有效 if  else 和while for 后面的花括号都有用
+
+        {
+            let name = "xdd";
+        }
+        console.log(name);
+        // 3.不存在变量提升
+        //     console.log(song);  会报错  无法在声明前使用  而var 会变量提升  
+        // let song="asd";   
+        // 4.不影响块级作用域链
+        {
+            let a = "安康学院";
+            function fn() {
+                console.log(a);
+            }
+            fn();
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        //1.let 声明没有变量提升
+        //2.是一个块级作用域
+        //3.不能重复声明
+        
+        */
+        // var a;
+
+
+        //var
+        // console.log(a);
+        // a = 1;
+        //1.let 声明没有变量提升
+        // console.log(b);
+        // let b = 10;
+        //2.是一个块级作用域
+        // console.log(c);
+        // if (true) {
+        //     let c = 19;
+        // };
+        //3.不能重复声明
+        /* 
+            1.const 声明常量 一旦被声明 无法修改
+            2.也是无法变量声明
+            3.无法重复声明
+            不能修改变量(对象)  但是可以修改内部的属性
+        */
+        // const an = 1;
+        // console.log(an);
+        // an = 2;
+        const person = {
+            name: 'sad'
+        };
+        console.log(person.name);
+        person.name = "qwe";
+        console.log(person.name);
+        const arr = [];
+        for (let i = 0; i < 10; i++) {
+            arr[i] = function () {
+                return i;
+            }
+        };
+        console.log(arr[5]());
+        /* 
+            let 优势 1.for循环是个经典的例子
+                    2.不会污染全局变量
+
+        */
+       let RegExp=10;
+       console.log(RegExp);
+       console.log(window.RegExp);
+       //默认情况下用const,而只有你知道变量需要修改时使用let  
+    </script>
+
+</body>
+
+</html>

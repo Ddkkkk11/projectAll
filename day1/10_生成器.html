@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*      //generator函数 可以通过yield关键字将函数挂起   为了改变流程提供了可能,同时为了做异步编程提供了方案
+             //他和普通函数的区别
+             //1.function后面 函数名前面有个*  function  *fn
+             //2.只能在函数内部使用了yield表达式 ,让函数挂起
+     
+             /*       function* fn() {
+                       console.log("1");
+                       yield 1;
+                       console.log("2");
+                       yield 2;
+                       console.log("end");
+                   };
+                   //当调用迭代器时 会返回一个遍历器对象   可以调用next();方法
+                   const result = fn(); //第一次调用不会执行函数
+                   console.log(result.next());
+                   console.log(result.next()); */
+        /*
+        console.log(result.next()); */
+
+        //总结generator函数  是分段执行的,yield 关键字是暂停执行,而next() 是恢复执行/*  */
+
+        /*   function* add() {
+              console.log("strat");
+              //x不是yield 的返回值 他是next()调用 执行当前yield()传入的实参
+              let x = yield '2'; //20
+              console.log('one' + x);
+              let y = yield '3';
+              console.log("two" + y); //30
+              console.log("total：" + (x + y));
+              return x + y;
+  
+          };
+          const fn = add();
+          console.log(fn.next()); //{value: '2', done: false}
+          console.log(fn.next(20)); //{value: '3', done: false}
+          console.log(fn.next(30)); //{value: '50', done: true} */
+        //使用场景:为了不具备interator接口的对象 提供了遍历操作
+        function* objectEntries(obj) {
+            //获取对象中的所有key保存到数组中 [name,age]
+            const propKeys = Object.keys(obj);
+            for (const propKey of propKeys) {
+                yield [propKey, obj[propKey]]
+            }
+        };
+        const obj = {
+            name: "xdd",
+            age: 10
+        };
+        obj[Symbol.iterator] = objectEntries;
+        for (let [key, value] of objectEntries(obj)) {
+            console.log(`${key},${value}`);
+        }
+
+        /*
+        遍历器 
+        const obj = {
+  [Symbol.iterator] : function () {
+    return {
+      next: function () {
+        return {
+          value: 1,
+          done: true
+        };
+      }
+    };
+  }
+};
+        
+        */
+    </script>
+</body>
+
+</html>

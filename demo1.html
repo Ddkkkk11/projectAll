@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>demo</title>
+</head>
+<script src="/js/vue.runtime.js"></script>
+
+<body>
+  <div id="root">
+
+
+  </div>
+  <script>
+    Vue.config.productionTip = false;
+    new Vue({
+      el: "#root",
+      template:`<h1>你好呀</h1>`,
+      render:h=>{
+        
+        return h('h1','你好啊')
+      }
+
+    })
+
+  </script>
+</body>
+
+</html>

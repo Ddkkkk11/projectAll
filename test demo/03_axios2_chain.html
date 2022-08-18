@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>axios的处理链流程</title>
+</head>
+<body>
+<script src="https://cdn.bootcss.com/axios/0.19.0/axios.min.js"></script>
+<script>
+  /*
+  * 请求拦截器 后添加 先执行  在 发送请求之前执行
+  * 响应拦截器   先添加先执行  在响应后执行
+  *
+  * */
+  //添加请求拦截器(回调函数)
+  axios.interceptors.request.use(config => {
+            console.log('request interceptors1 onResolved()')
+            return config;//promise链  如果不返回config 真正发请求的时候config为undefined
+          },
+          error => {
+            console.log('request interceptors1 onReject()');
+            return Promise.reject(error);
+          }
+  );
+  axios.interceptors.request.use(config => {
+            console.log('request interceptors2 onResolved()')
+            return config;
+          },
+          error => {
+            console.log('request interceptors2 onReject()');
+            return Promise.reject(error);
+          }
+  );
+  //添加响应拦截器
+  axios.interceptors.response.use(response => {
+            console.log('response interceptors1 onResolved()')
+            return response;//返回响应  如果不返回 则下面的操作为undefined  真正发
+            //请求的时候没有response 所以读取不到数据
+          },
+          error => {
+            console.log('response interceptors1 onRejected()')
+            return Promise.reject(error);
+          }
+  );
+  axios.interceptors.response.use(response => {
+            console.log('response interceptors2 onResolved()')
+            return response;
+          },
+          error => {
+            console.log('response interceptors2 onRejected()')
+            return Promise.reject(error);
+          }
+  );
+  axios.get('http://localhost:3000/posts').then(
+          response => {
+            console.log('response', response.data)
+            // console.log('response', response)
+          }
+  ).catch(error => {
+    console.log(error.message);
+  })
+</script>
+</body>
+</html>

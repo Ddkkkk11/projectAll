@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>取消请求</title>
+</head>
+
+<body>
+  <button onclick="getProducts1()">获取商品列表1</button>
+  <br>
+  <button onclick="getProducts2()">获取商品列表2</button>
+  <br>
+  <button onclick="cancelReq()">取消请求</button>
+  <br>
+  <script src="https://cdn.bootcss.com/axios/0.19.0/axios.min.js"></script>
+  <script !src="">
+    /*  axios.interceptors.request.use(config => {
+       console.log(config)
+       return config;
+     }); */
+    /* 
+     当第一次点击请求一的时候会存放一个cancel
+     当第二次点击 发现cancel(第一次的cancel)有值  会取消cancel (但是不是立马执行)
+     然后接着执行第二次存放一个cancel(第二次的cancel)然后 
+     上面取消cancel的操作现在执行 cancel=null;
+     导致第三次点击的时候 判断第二次的cancel是否有值(没有值) 因为第二次存放的cancel被第一次的cancel取消cancel=null
+     导致无法取消第二次的请求  所以会失效
+
+    
+    
+    */
+    let cancel; //用于保存取消请求的函数
+    function getProducts1() {
+      //在发送请求前  取消未完成的请求
+      if (typeof cancel === 'function') {
+        cancel('取消请求');
+      }
+
+      axios({
+        url: 'http://localhost:4000/products1',
+        cancelToken: new axios.CancelToken((c) => {//c是取消当前请求的函数
+          //保存取消函数，用于之后可能需要取消当前请求
+          cancel = c;
+        })
+      })
+        .then(
+          response => {
+            cancel = null;
+            console.log('请求成功了1', response.data);
+          }
+        )
+        .catch(
+          error => {
+            if (axios.isCancel(error)) {
+              // cancel = null
+              console.log('取消请求2', error.message);
+            } else {
+              cancel = null;
+              console.log('请求失败了1', error.message);
+            }
+
+          }
+        );
+    };
+    function getProducts2() {
+      if (typeof cancel === 'function') {
+        cancel('cancel request')
+      }
+      axios({
+        url: 'http://localhost:4000/products2',
+        cancelToken: new axios.CancelToken((c) => {//c是取消当前请求的函数
+          //保存取消函数，用于之后可能需要取消当前请求
+          cancel = c;
+        })
+      })
+        .then(
+          response => {
+            cancel = null;
+            console.log('请求成功了2', response.data);
+          }
+        )
+        .catch(
+          error => {
+            if (axios.isCancel(error)) {
+              console.log('取消请求错误2', error.message)
+            } else {//请求出错
+              cancel = null;
+              console.log('请求失败了2', error.message);
+            }
+
+          }
+        );
+    };
+    function cancelReq() {
+      //执行取消请求的函数
+      if (typeof cancel === 'function') {
+        cancel('强制取消请求');
+      } else {
+        console.log('没有可以取消的请求');
+      }
+    };
+
+
+  </script>
+</body>
+
+</html>

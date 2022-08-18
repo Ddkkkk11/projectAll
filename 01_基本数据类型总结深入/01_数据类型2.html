@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 
+        1、undefined 和null有什么区别
+            1、undefined代表定义了 未赋值
+                null表示定义了并且赋值 只是值为null
+        2、什么时候给变量赋值null呢？
+                初始赋值 为了表明将要赋值给对象
+                结束前,让被指向的对象成为垃圾对象 进而让垃圾回收器回收
+        3、严格区分变量类型和数据类型
+            --数据的类型
+                --基本类型
+                --对象类型
+            --变量的类型   (变量类型值的类型)
+                --基本类型  保存的就是基本类型的数据
+                --引用类型  保存的是一个地址值(地址可以找到对象)
+     -->
+    <script>
+        // 实例:实例对象
+        // 类型:类型对象
+        function Person(name, age) {  //构造函数  (类型)            由构造函数创建的对象称为实例对象 构造函数成为一个类
+            this.name = name;
+            this.age = age;
+        }
+        var per = new Person("xdd", 15);//根据类型创建的实例对象
+        //  Person("jack","16");        //一般不推荐这么做
+        var a;
+        console.log(a); //undefined 
+        a = null;
+        console.log(a);//null   
+        // 开始的时候
+        var b = null;  //为了表明将要赋值给对象  但是对象还没有创建没有数据 但是可以代表这个是对象
+
+        // 确定了对象就赋值
+        b = ['a', 'b'];
+
+        // 最后 b=null;  释放对象
+        b = null;   //让b指向的对象成为垃圾对象(被垃圾回收器回收)
+
+        var c = function () {
+
+        }
+        typeof c;  // 值是function
+</script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>05_面试题</title>
+</head>
+<body>
+<script type="text/javascript">
+  function a() {}
+  var a;
+  console.log(typeof a);  //输出function  因为函数是后边才提升的
+  /*先执行变量提升
+    在执行函数提升*/
+
+  if (!(b in window)) {
+    var b = 1;
+  }
+  console.log(b) ;//undefined  因为b是window的属性 所以 进去if判断进不去
+
+  var c = 1
+  function c(c) {
+    console.log(c)
+    // var c = 3
+  };
+  c(2);//2\
+  /*等价于
+  *     var c;
+  * function c(c){
+  *     console.log(c);
+  * };
+    c=1;
+    c(2);
+  先声明  然后等所以声明后 在赋值
+
+   */
+
+</script>
+</body>
+</html>

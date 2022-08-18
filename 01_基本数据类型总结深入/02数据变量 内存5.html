@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        问题:JS引擎如何管理内存？
+        1.内存声明周期
+        --分配小内存空间,得到他的使用权
+        --存储数据,可以反复进行操作 
+        --释放小内存空间
+        2.释放内存
+        --局部变量函数执行完后 自动释放
+        --成为垃圾对象==>由垃圾回收器回收    
+     -->
+
+    <script>
+        let a = 3;
+        let obj = {};
+        obj = null;
+        function fn() {
+            // let b = 4;
+            let b = {};
+        }
+        fn(); //执行完fn 后 这个b是自动释放的 b所指的对象是在后面某个时刻 垃圾回收器自动回收的
+
+
+    </script>
+
+</body>
+
+</html>

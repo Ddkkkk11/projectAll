@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>04_执行上下文栈2</title>
+</head>
+<body>
+  <!--
+1. 依次输出什么?
+global begin:undefined
+    foo() begin:1
+    foo() begin:2
+    foo() begin:3
+    global end:1;
+2. 整个过程中产生了几个执行上下文?
+   四个 +1个window  执行上下文 调用了四次函数
+-->
+  <script type="text/javascript">
+    console.log('global begin: ' + i)    //undefined
+    var  i = 1
+    foo(1);
+    function foo(i) {
+      if (i == 4) {
+        return;
+      }
+      console.log('foo() begin:' + i);
+      foo(i + 1); //递归调用:在函数内部调用自己
+      console.log('foo() end:' + i);
+    }
+    console.log('global end: ' + i)
+  // i=1;
+  //     foo(i=1){
+  //        console.log('foo() begin:' + 1);
+  //         foo(i=1+1){
+  //          console.log('foo() begin:' + 2);
+  //          foo(i=2+1){
+  //             console.log('foo() begin:' + 3);
+  //               foo(i=3+1){
+  //               return;
+  //               }
+  //                console.log('foo() end:' + 3);
+  //          }
+  //           console.log('foo() end:' +2);
+  //         }
+  //     console.log('foo() end:' + 3);
+  //
+  // }
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于变量和赋值内存的问题</title>
+</head>
+
+<body>
+    <!-- 
+    问题 var a=xxx; a内存保存的值是什么
+        xxx是基本数据,保存的就是这个数据 
+        xxx是一个对象,保存的就是这个对象的地址
+        xxx是一个变量,保存的就是xxx的内存内容(可能是一般数据,也可能是地址值)
+ -->
+    <script>
+        let a = 3;
+        let b = function () {
+            //b中还是保存的地址值 因为函数是特殊的对象
+        };
+        let c="qwe";
+        a=c;
+
+
+    </script>
+</body>
+
+</html>

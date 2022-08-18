@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+        关于引用变量赋值的问题
+              多个引用变量指向同一个对象,通过一个变量修改对象内部数据,
+           （其他所有变量看到的） 另一个对象看到的是修改后的数组
+           两个引用变量指向同一个对象,让其中一个引用变量指向另一个对象,另一个引用对象指向前一个对象
+
+     -->
+    <script>
+        // let obj = {
+        //     name: "Tom"
+        // };
+        // let obj2 = obj;
+        // obj.name = "jack";
+        // console.log(obj2.name);
+
+        // let obj = { name: "tom" };
+        // let obj2 = obj;
+        // obj2.age = 12;
+        // console.log(obj.age); //12
+        // let obj1={name:"Tom"};
+
+        // function fn(obj) {
+        //         obj.name="Bob";
+        // }
+        // fn(obj1);
+        // console.log(obj1.name);//bob相当于 先把obj1的保存的内容赋值给 obj  这样两个对象指向的是一个地址
+        // 两个对象指向的都是 tom  然后给obj.name修改这个name属性 然后变成了bob  输出了bob
+        let a = { age: 12 };
+        let b = a;
+        a = { name: 'bob', age: 13 };
+        b.age = 14;
+        console.log(b.age, a.name, a.age);//12 bob 13          b.age=14;//14 bob 13
+        function fn(obj) {
+            obj = { age: 15 }
+        }
+        fn(a);
+        console.log(a.age);//13
+
+    </script>
+
+</body>
+
+</html>

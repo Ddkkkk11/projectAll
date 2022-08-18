@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+</head>
+
+<body>
+
+<!--
+1.什么是函数?
+    实现特定功能的n条语句的封装体
+        只能函数是可以执行的,其他类型的数据不能执行
+2.为什么要用函数？
+        提高代码复用
+        便于阅读交流
+3.如何定义函数
+        --函数声明
+        --表达式
+4.如何调用执行函数
+        --函数调用test()  直接调用
+        --通过对象调用 obj.setName();
+        --new test(); new 调用
+        --test.call();//test.apply(); 临时让test成为obj的方法进行调用  相当于obj.test()
+-->
+<script>
+    /*
+       1.根据年龄输出对应信息
+       2.如果年龄小于18 输出:未成年在等等
+       3.如果大于60 输出:算了吧
+       4.其他输出:刚刚好
+    */
+    function showInfo(age) {
+        if (age < 18) {
+            console.log("在等等");
+        } else if (age > 60) {
+            console.log("算了吧");
+        } else {
+            console.log("刚刚好");
+        }
+    }
+    //  let age=12;
+    showInfo(17);
+    showInfo(60);
+    showInfo(61);
+    showInfo(17);
+    //函数声明
+    function fn() {
+        console.log("fn()");
+    }
+    let fn2 = function (name) { //函数表达式
+        this.name = name;
+    };
+    let obj={name:"xdd"};
+    function test() {
+        this.xxx="asd";
+        console.log(this)
+    };
+   // obj.test()// 不能直接调用  obj里面没有这个方法
+    test.call(obj); //类似obj.test()假如是obj调用的 输出obj.xxx应该为asd
+    /*可以让一个函数成为一个指定对象的方法进行调用 */
+    console.log(obj.xxx);
+</script>
+
+</body>
+
+</html>

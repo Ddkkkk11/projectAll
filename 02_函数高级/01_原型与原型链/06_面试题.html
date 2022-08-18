@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>06_面试题</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    /*
+    测试题1
+     */
+    var A = function () {
+    };
+    A.prototype.n = 1
+    var b = new A()
+    A.prototype = {
+      n: 2,
+      m: 3
+    }
+    var c = new A()
+    console.log(b.n, b.m, c.n, c.m)
+    // b.n=1; b.m=undefined   c.n=2  c.m3
+    /*
+     测试题2
+     */
+    var F = function () { };
+    Object.prototype.a = function () {
+      console.log('a()')
+    };
+    Function.prototype.b = function () {
+      console.log('b()')
+    };
+    var f = new F();
+    // f.a()  ;
+    console.log(F.prototype.__proto__ === Object.prototype);
+    // f.b() ;  
+    console.log(f.b);//underfined
+    // F.a()
+    // F.b()
+    console.log(f);
+    console.log(Object.prototype);
+  </script>
+</body>
+
+</html>

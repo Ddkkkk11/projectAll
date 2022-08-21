@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>变量</title>
+</head>
+
+<body>
+  <!--
+  var
+    --没有块级作用域
+
+    let
+    --有块级作用域
+    const 和let类似 
+    不能重复赋值
+    使用场景{不需要改变的量
+          声明函数 对象 可以让函数和对象不会被修改
+      
+    }
+    
+  -->
+  <script>
+    {
+      var a = 1;
+    }
+    console.log(a);
+
+    for (var index = 0; index < 5; index++) {
+      console.log('for循环里面的index', index);
+    }
+    console.log(index);
+
+    const obj = {
+      name: 'xdd',
+    }
+    console.log(obj.name);
+  </script>
+</body>
+
+</html>

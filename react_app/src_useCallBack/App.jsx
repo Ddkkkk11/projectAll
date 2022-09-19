@@ -25,7 +25,7 @@ const App = () => {
   *       --当依赖数组发生变化时useCallBack才会执行，
   *       如果不指定回调函数每次都会重新创建
   *       将回调函数中使用到的变量都设置到依赖数组中
-  *           除了setState
+  *           除了setState 
   * */
     const addFun = useCallback(() => {
       setCount( prevState => {

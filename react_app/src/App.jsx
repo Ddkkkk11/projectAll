@@ -1,46 +1,35 @@
-import React, { useCallback, useState } from 'react'
-import B from "./B";
+import React, { useCallback, useEffect, useState } from 'react'
 
 const App = () => {
-    console.log('组件重新渲染了')
-    const [count, setCount] = useState(1);
-    const flag = count % 4 ==0;
-   /* const addFun = () => {
-      console.log('按钮点击了')
-      // setCount(() => count + 1);
-      setCount( prevState => {
-        console.log(prevState)
-        return prevState + 1;
-      });
-    };*/
-    // useCallback() 是一个钩子函数用来创建react的回调函数 创建的回调函数不会总在组件重新渲染时重新创建
+    const [stuData, setStuData] = useState({});
+    let flag = false;
+    useEffect(() => {
+            //加载数据
+      //fetch用来向服务器发送请求，是ajax的升级版
+      //他需要两个参数，请求地址，请求信息(method)
+        fetch('http://localhost:1337/api/students')
+          .then((res) => {
+            console.log(res);
+           return  res.json(); //可以将响应的json直接转换为js对象
+          })
+          .then((data) => {
+            console.log(data);
+            flag = true;
+            const val = data;
+          })
+          .catch((err) => {
+          })
+    }, [])
 
-
-  /*
-  * useCallback
-  *     参数1：
-  *         回调函数
-  *     参数2
-  *         依赖数组
-  *       --当依赖数组发生变化时useCallBack才会执行，
-  *       如果不指定回调函数每次都会重新创建
-  *       将回调函数中使用到的变量都设置到依赖数组中
-  *           除了setState
-  * */
-    const addFun = useCallback(() => {
-      setCount( prevState => {
-        console.log(prevState)
-        return prevState + 1;
-      });
-    });
     return (
+      /*
+      *   将写死的数据替换为从接口中加载的数据
+      *   组件初始化就需要向服务器发送请求加载数据
+      *
+      *
+      * */
         <div>
-            {count}
-            <hr/>
-            <button onClick={addFun}>点我一下
-            </button>
-            <hr/>
-            <B test = {flag} onAdd={addFun}/>
+
         </div>
     );
 };

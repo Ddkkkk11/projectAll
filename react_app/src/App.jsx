@@ -1,56 +1,50 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
+import StudentList from './components/StudentList'
+import './App.css'
 
 const App = () => {
-  const [stuData, setStuData] = useState(null)
-  //添加一个state记录数据是否正在加载
+
+  const [stuData, setStuData] = useState([])
+
+  // 添加一个state来记录数据是否正在加载,false表示没有加载数据，true表示加载
   const [loading, setLoading] = useState(false)
 
-  //记录错误信息
+  // 创建一个state来记录错误信息
   const [error, setError] = useState(null)
-  let arr = []
-  useEffect(() => {
-    //加载数据
-    try {
-      //重置错误
-      setError(null);
-      setLoading(true)
-      //fetch用来向服务器发送请求，是ajax的升级版
-      //他需要两个参数，请求地址，请求信息(method)
 
-      const fetchData = async () => {
-        const res = await fetch('http://localhost:1337/api/students');
-        console.log(res)
+  //抽出请求方法
+  const fetchData = useCallback(async () => {
+      try {
+        setLoading(true)
+        setError(null)
+        const res = await fetch('http://localhost:1337/api/students')
         //判断请求是否加载成功
-        if (res.ok){
-          const data = await res.json();
-          console.log(data);
-          setStuData(data.data);
-        }else {
-          throw new Error('数据加载出错');
+        if (res.ok) {
+          const data = await res.json()
+          console.log(data.data)
+          setStuData(data.data)
+        } else {
+          throw new Error('数据加载失败！')
         }
+      } catch (e) {
+        setError(e)
+      } finally {
+        setLoading(false)
       }
-      fetchData();
 
-    }catch (e){
-      setError(e.message)
-      console.log(e)
-    } finally {
-        setLoading(false);
-    }
+    })
 
 
+  useEffect(() => {
+    fetchData()
   }, [])
 
   return (
-
-    <div>
-      {stuData !== null ? (
-        stuData.map((item) => {
-          return (
-            <li key={item.id}>{item.attributes.name},年龄是{item.attributes.age}, 性别是{item.attributes.gender}</li>)
-        })
-      ) : null
-      }
+    <div className="app">
+      <button onClick={() => fetchData()}>点我加载数据</button>
+      {(!loading && !error) && <StudentList stus={stuData}/>}
+      {loading && <p>数据正在加载中...</p>}
+      {error && <p>数据加载异常！</p>}
     </div>
   )
 }

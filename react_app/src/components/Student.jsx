@@ -1,5 +1,5 @@
 import React, {useCallback, useContext, useState} from 'react'
-import stuContext from "../stuContent";
+import stuContext from "../store/stuContent";
 
 const Student = (props) => {
     // {stu:{name, age, gender, address}} = props

@@ -1,7 +1,7 @@
 import React, {useCallback, useEffect, useState} from 'react'
 import StudentList from './components/StudentList'
 import './App.css'
-import StuContent from "./stuContent";
+import StuContent from "./store/stuContent";
 
 const App = () => {
 

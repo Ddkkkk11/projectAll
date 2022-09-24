@@ -34,6 +34,20 @@ const App = () => {
         }
 
     })
+    /*context 相当于一个公共的存储空间
+        通过React.creatContext()创建context
+    *
+    *   <context.Consumer>
+    方式1
+    * {(ctx) => {
+            return <div>{ctx.name} -{ctx.age} </div>
+    }
+    }
+    </context.Consumer>
+    *方式2
+     const ctx = useContext('创建的context')
+
+    * */
 
 
     useEffect(() => {

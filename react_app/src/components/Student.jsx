@@ -1,10 +1,12 @@
 import React, {useCallback, useContext, useState} from 'react'
 import stuContext from "../store/stuContent";
+import StudentForm from "./StudentForm";
 
 const Student = (props) => {
     // {stu:{name, age, gender, address}} = props
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [isEdit, setIsEdit] = useState(false);
     console.log(props);
     const ctx = useContext(stuContext);
     const delStu = useCallback(async () => {
@@ -37,9 +39,15 @@ const Student = (props) => {
         delStu()
 
     };
+    //取消编辑
+    const cancleEdit = () => {
+        setIsEdit(false);
+    }
 
     return (
         <>
+            {
+                !isEdit &&
             <tr>
                 <td>{props.stu.attributes.name}</td>
                 <td>{props.stu.attributes.gender}</td>
@@ -47,8 +55,14 @@ const Student = (props) => {
                 <td>{props.stu.attributes.address}</td>
                 <td>
                     <button onClick={deleteHandle}>删除</button>
+                    <button onClick={() => setIsEdit(true)}>修改</button>
                 </td>
             </tr>
+            }
+            {
+                isEdit&&<StudentForm stu={props.stu} onCancle={cancleEdit}/>
+            }
+
             {loading && <tr colSpan={5}>正在删除数据</tr>}
             {error && <tr colSpan={5}>删除失败</tr>}
         </>
